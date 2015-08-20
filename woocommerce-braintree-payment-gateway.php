@@ -317,8 +317,8 @@ function run_WC_braintree_payment_gateway() {
 			));
 
 			if ($result->success) {
-			    echo("Success! Transaction ID: " . $result->transaction->id);
-				// Payment complete
+			    
+			    	// Payment complete
 				$order->payment_complete( $result->transaction->id );
 				// Add order note
 				$order->add_order_note( sprintf( __( '%s payment approved! Trnsaction ID: %s', 'woocommerce' ), $this->title, $result->transaction->id ) );
